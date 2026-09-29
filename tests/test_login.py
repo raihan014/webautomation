@@ -19,22 +19,22 @@ def test_login():
 
         page = browser.new_page()
 
-        # 1. Launch Automation Exercise
+        # Launch Automation Exercise
         page.goto("https://www.automationexercise.com/")
 
-        # 2. Navigate to Login
+        # Navigate to Login
         page.get_by_text("Signup / Login").click()
 
-        # 3. Enter registered email
+        # registered email  call
         page.locator('[data-qa="login-email"]').fill(EMAIL)
 
-        # 4. Enter registered password
+        # registered password call
         page.locator('[data-qa="login-password"]').fill(PASSWORD)
 
-        # 5. Submit login
+        # Submit login
         page.locator('[data-qa="login-button"]').click()
 
-        # 6. Verify successful login
+        # Verify successful login
         logged_in_text = page.get_by_text("Logged in as").first
         logged_in_text.wait_for()
 
